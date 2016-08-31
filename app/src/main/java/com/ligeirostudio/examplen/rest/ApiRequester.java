@@ -4,9 +4,12 @@ package com.ligeirostudio.examplen.rest;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.ligeirostudio.examplen.model.GenerateToken;
+import com.ligeirostudio.examplen.model.SendMoney;
+import com.ligeirostudio.examplen.model.Transfers;
 
 import java.io.IOException;
 import java.lang.reflect.Modifier;
+import java.util.List;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -70,6 +73,12 @@ public class ApiRequester {
 
     }
 
+    public void postSendMoney(SendMoney sendMoney){
+        api.postSendMoney(sendMoney).enqueue(new RequestCallBack<String>());
+    }
 
+    public void getTransfers(String token){
+        api.getTransfers(token).enqueue(new RequestCallBack<List<Transfers>>());
+    }
 
 }

@@ -25,8 +25,6 @@ import butterknife.Unbinder;
  */
 public class HomeFragment extends Fragment {
 
-
-
     @BindView(R.id.btnSendMoney)
     View btnSendMoney;
 
@@ -40,13 +38,6 @@ public class HomeFragment extends Fragment {
     TextView email;
 
     private Unbinder unbinder;
-
-
-
-    public HomeFragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -26,12 +26,6 @@ import butterknife.Unbinder;
 
 public class SendMoneyFragment extends Fragment {
 
-
-    public SendMoneyFragment() {
-        // Required empty public constructor
-    }
-
-
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
@@ -70,16 +64,8 @@ public class SendMoneyFragment extends Fragment {
 
     public void setAdapter() {
 
-        ArrayList<Contact> contacts = new ArrayList();
 
-        for (int i = 0; i < 15; i++){
-            contacts.add(new Contact("1","Fenando Costa", "(11) 99999-9999","xx"));
-
-        }
-
-
-
-        sendMoneyAdapter = new SendMoneyAdapter(getActivity(), contacts);
+        sendMoneyAdapter = new SendMoneyAdapter(getActivity(), new Contact().getListOfContact());
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(sendMoneyAdapter);

@@ -15,18 +15,16 @@ import retrofit2.Response;
 public class RequestCallBack<T> implements Callback<T> {
 
 
-    private EventBus mBus;
-
     @Override
     public void onResponse(Call<T> call, Response<T> response) {
 
         if (response.isSuccessful()) {
             Log.e("RESPONSE", " " + response.body());
 
-            mBus.getDefault().postSticky(response.body());
+            EventBus.getDefault().postSticky(response.body());
 
         } else {
-            mBus.getDefault().postSticky(response.errorBody());
+            EventBus.getDefault().postSticky(response.errorBody());
 
         }
 
@@ -37,7 +35,7 @@ public class RequestCallBack<T> implements Callback<T> {
     public void onFailure(Call<T> call, Throwable t) {
         Log.e("Listener_error", " " + t.getMessage());
 
-        mBus.getDefault().postSticky(t.getMessage());
+        EventBus.getDefault().postSticky(t.getMessage());
 
     }
 

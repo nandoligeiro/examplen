@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 import com.ligeirostudio.examplen.R;
 import com.ligeirostudio.examplen.model.Contact;
+import com.ligeirostudio.examplen.model.SendMoney;
+import com.ligeirostudio.examplen.rest.ApiRequester;
+import com.ligeirostudio.examplen.view.uicomponents.CircleTransform;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -46,8 +50,10 @@ public class SendMoneyAdapter extends RecyclerView.Adapter<SendMoneyAdapter.Send
 
         Contact contact = listContact.get(position);
 
-        holder.name.setText(contact.getId());
-        holder.telephone.setText(contact.getphone());
+        holder.name.setText(contact.getName());
+        holder.telephone.setText(contact.getPhone());
+        Picasso.with(context).load(contact.getPhoto()).transform(new CircleTransform()).into(holder.image);
+
 
 
     }
@@ -69,7 +75,12 @@ public class SendMoneyAdapter extends RecyclerView.Adapter<SendMoneyAdapter.Send
         @OnClick(R.id.card_view)
         public void onClickCardView() {
 
-            Log.d("LS", "Click");
+
+            Contact contact = listContact.get(getLayoutPosition());
+
+            new ApiRequester().postSendMoney(new SendMoney(contact.getId(), 4, "78a5d1ae-0244-41b8-9ed0-34be575e1f1e"));
+
+
         }
 
         @BindView(R.id.card_view)
