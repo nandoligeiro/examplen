@@ -3,7 +3,6 @@ package com.ligeirostudio.examplen.rest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.ligeirostudio.examplen.model.GenerateToken;
 import com.ligeirostudio.examplen.model.SendMoney;
 import com.ligeirostudio.examplen.model.Transfers;
 
@@ -15,7 +14,6 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;

@@ -3,7 +3,6 @@ package com.ligeirostudio.examplen.view.adapters;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,8 @@ import android.widget.TextView;
 
 import com.ligeirostudio.examplen.R;
 import com.ligeirostudio.examplen.model.Contact;
-import com.ligeirostudio.examplen.model.SendMoney;
-import com.ligeirostudio.examplen.rest.ApiRequester;
+import com.ligeirostudio.examplen.view.activities.MainActivity;
+import com.ligeirostudio.examplen.view.fragments.SendDialogFragment;
 import com.ligeirostudio.examplen.view.uicomponents.CircleTransform;
 import com.squareup.picasso.Picasso;
 
@@ -55,7 +54,6 @@ public class SendMoneyAdapter extends RecyclerView.Adapter<SendMoneyAdapter.Send
         Picasso.with(context).load(contact.getPhoto()).transform(new CircleTransform()).into(holder.image);
 
 
-
     }
 
 
@@ -75,11 +73,11 @@ public class SendMoneyAdapter extends RecyclerView.Adapter<SendMoneyAdapter.Send
         @OnClick(R.id.card_view)
         public void onClickCardView() {
 
-
             Contact contact = listContact.get(getLayoutPosition());
 
-            new ApiRequester().postSendMoney(new SendMoney(contact.getId(), 4, "78a5d1ae-0244-41b8-9ed0-34be575e1f1e"));
-
+            SendDialogFragment sendDialogFragment = new SendDialogFragment();
+            sendDialogFragment.setContact(contact);
+            sendDialogFragment.show(((MainActivity) context).getSupportFragmentManager(), SendDialogFragment.TAG);
 
         }
 

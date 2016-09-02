@@ -42,7 +42,7 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="2dp"
             android:text="Fernando Costa"
             android:textColor="@android:color/white"
             android:layout_centerHorizontal="true"
@@ -53,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="nandoligeiro@gmail.com"
+
             android:textColor="@android:color/white"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/tv_name"
@@ -72,27 +73,27 @@
 
     <Button
         android:id="@+id/btnSendMoney"
-        android:text="Button"
+        android:text="Enviar Dinheiro"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:textColor="@color/green_neon"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/line"
-        android:background="@drawable/btn_rounded_filter_unselected"
+        android:background="@drawable/btn_rounded_white"
         android:textAllCaps="true"
         android:elevation="0dp" />
 
     <Button
         android:id="@+id/btnHistory"
-        android:text="Button"
+        android:text="Historico"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:textColor="@color/green_neon"
         android:layout_margin="10dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/btnSendMoney"
-        android:background="@drawable/btn_rounded_filter_unselected"
+        android:background="@drawable/btn_rounded_white"
         android:textAllCaps="true"
         />
 

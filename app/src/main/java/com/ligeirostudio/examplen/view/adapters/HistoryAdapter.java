@@ -43,7 +43,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
     @Override
     public HistoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.card_view_contacts, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.card_view_history, parent, false);
         return new HistoryViewHolder(view);
 
     }
@@ -63,6 +63,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
                 holder.name.setText(contact.getName());
                 holder.telephone.setText(contact.getPhone());
+                holder.date.setText(transfers.getDate());
                 Picasso.with(context).load(contact.getPhoto()).transform(new CircleTransform()).into(holder.image);
 
 
@@ -104,5 +105,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
         @BindView(R.id.tv_telephone)
         TextView telephone;
+
+        @BindView(R.id.tv_date)
+        TextView date;
     }
 }

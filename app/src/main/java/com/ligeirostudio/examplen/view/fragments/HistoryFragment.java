@@ -14,13 +14,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ligeirostudio.examplen.R;
-import com.ligeirostudio.examplen.model.Contact;
 import com.ligeirostudio.examplen.rest.ApiRequester;
+import com.ligeirostudio.examplen.utils.SharedPrefs;
 import com.ligeirostudio.examplen.view.activities.MainActivity;
 import com.ligeirostudio.examplen.view.adapters.HistoryAdapter;
-import com.ligeirostudio.examplen.view.adapters.SendMoneyAdapter;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,7 +45,7 @@ public class HistoryFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        new ApiRequester().getTransfers("78a5d1ae-0244-41b8-9ed0-34be575e1f1e");
+        new ApiRequester().getTransfers(SharedPrefs.getString(getActivity(),"token"));
 
         if (getArguments() != null) {
 

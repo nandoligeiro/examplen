@@ -7,37 +7,57 @@ import java.io.Serializable;
  */
 public class SendMoney implements Serializable{
 
-    private int clientId;
-    private double value;
-    private String token;
+    private int Id;
+    private int ClienteId;
+    private double Valor;
+    private String Token;
+    private String Data;
 
-    public SendMoney(int clientId, double value, String token) {
-        this.clientId = clientId;
-        this.value = value;
-        this.token = token;
+    public SendMoney(int id, int clienteId, double valor, String token, String data) {
+        Id = id;
+        ClienteId = clienteId;
+        Valor = valor;
+        Token = token;
+        Data = data;
     }
 
-    public int getClientId() {
-        return clientId;
+    public int getId() {
+        return Id;
     }
 
-    public void setClientId(int clientId) {
-        this.clientId = clientId;
+    public void setId(int id) {
+        Id = id;
     }
 
-    public double getValue() {
-        return value;
+    public int getClienteId() {
+        return ClienteId;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setClienteId(int clienteId) {
+        ClienteId = clienteId;
+    }
+
+    public double getValor() {
+        return Valor;
+    }
+
+    public void setValor(double valor) {
+        Valor = valor;
     }
 
     public String getToken() {
-        return token;
+        return Token;
     }
 
     public void setToken(String token) {
-        this.token = token;
+        Token = token;
+    }
+
+    public String getData() {
+        return Data;
+    }
+
+    public void setData(String data) {
+        Data = data;
     }
 }

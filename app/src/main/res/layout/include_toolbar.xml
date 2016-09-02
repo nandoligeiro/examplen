@@ -17,7 +17,7 @@
         tools:ignore="MissingPrefix"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="15dp"
+        android:textSize="18dp"
         android:textStyle="bold"/>
 
 </android.support.v7.widget.Toolbar>
